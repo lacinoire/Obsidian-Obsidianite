@@ -46,22 +46,23 @@
 .theme-dark {
   --background-primary: #100e17;
   --background-primary-alt: #0d0b12;
-  --background-secondary: #191621;
+  --background-secondary: #161721;
   --background-secondary-alt: #0d0b12;
   --text-normal: #bebebe;
   --text-accent: #0fb6d6;
-  --text-sub-accent: #f4569d;
+  --text-sub-accent: #002d48;
   --text-dim: #45aaff;
   --text-faint: #7aa2f7;
   --text-title-h1: var(--text-accent);
-  --text-title-h2: #cbdbe5;
-  --text-title-h3: #cbdbe5;
-  --text-title-h4: #cbdbe5;
-  --text-title-h5: #cbdbe5;
+  --text-title-h2: #0091b0;
+  --text-title-h3: #006e8c;
+  --text-title-h4: #004d69;
+  --text-title-h5: #003f66;
   --text-link: #b4b4b4;
   --text-a: #6bcafb;
   --text-a-hover: #6bcafb;
   --text-mark: #263d92;
+  --link-color: #9c5098;
   --code-background: var(--background-secondary);
   --interactive-accent: rgba(14, 210, 247, 0.5);
   --interactive-accent-hover: rgba(14, 210, 247, 0.8);
@@ -72,7 +73,7 @@
   --font-family-editor: 'Rubik';
   --font-family-preview: 'Rubik';
   --bg-sub-accent-55: rgba(244, 86, 157, 0.55);
-  --bg-accent-55: rgba(14, 210, 247, 0.55);
+  --bg-accent-55: rgba(90, 71, 158, 0.55);
   --bg-accent-25: rgba(14, 210, 247, 0.25);
   --text-highlight-bg: rgba(244, 86, 157, 0.25);
   --background-modifier-border: rgba(14, 210, 247, 0.05);
@@ -112,6 +113,24 @@
 
   /** Font specially for codes **/
   --code-mono-font: 'OperatorMonoSSmLig-Book';
+}
+/* 
+* --- SPELL CHECKER --- *
+.CodeMirror .cm-spell-error {
+  background-position:bottom;
+  background-repeat:repeat-x;
+  background-image:linear-gradient(red, yellow, blue) !important;
+}
+*/
+
+.cm-s-obsidian span.cm-error {
+  color: #50fa7b;
+}
+
+.CodeMirror .cm-spell-error {
+  background-image: url(public/images/7877465e5f8197b19e8e.gif8) !important;
+  background-position: bottom;
+  background-repeat: repeat-x;
 }
 
 /**-------------------**
@@ -685,8 +704,8 @@ em {
 /** editor mode **/
 .cm-s-obsidian span.cm-link:not(.cm-formatting-link) .cm-underline,
 .cm-s-obsidian span.cm-hmd-internal-link .cm-underline {
-  color: var(--text-normal);
-  -webkit-text-fill-color: var(--text-normal);
+  color: var(--link-color);
+  /* -webkit-text-fill-color: var(--text-normal); */
   background-position: 0 100%;
   background-repeat: repeat-x;
   background-size: 5px 5px;
@@ -713,7 +732,7 @@ cm-s-obsidian span.cm-link:not(.cm-formatting-link) .cm-underline {
 
 .internal-link,
 .external-link {
-  color: var(--text-normal);
+  color: var(--link-color);
   background-position: 0 100%;
   background-repeat: repeat-x;
   background-size: 5px 5px;
@@ -739,16 +758,16 @@ cm-s-obsidian span.cm-link:not(.cm-formatting-link) .cm-underline {
 
 .internal-link:hover,
 .cm-s-obsidian span.cm-hmd-internal-link .cm-underline:hover {
-  -webkit-text-fill-color: #fff;
-  color: #fff;
+  -webkit-text-fill-color: var(--link-color);
+  color: var(--link-color);
   background-size: 4px 50px;
   text-decoration-line: none !important;
 }
 
 .cm-s-obsidian span.cm-link:not(.cm-formatting-link) .cm-underline:hover,
 .external-link:hover {
-  -webkit-text-fill-color: #fff;
-  color: #fff;
+  -webkit-text-fill-color: var(--link-color);
+  color: var(--link-color);
   background-size: 4px 50px;
   text-decoration-line: none !important;
 }
